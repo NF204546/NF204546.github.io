@@ -1,7 +1,7 @@
 /* 页面加载动画设计，本页代码参考Hexo-NexT源码设计改编
 源码链接: https://github.com/iissnan/hexo-theme-next/blob/master/source/js/src/motion.js
 */
-var MotionExector = {
+let MotionExector = {
   queue: [],
   index: -1,
   add: function(fn) {
@@ -15,110 +15,55 @@ var MotionExector = {
   },
   start: function() {
     this.next();
-  }, 
-  clear: function() {
-    window.Velocity('stop');
-    this.queue = [];
-    this.index - 1;
   }
 }
 
 const Element_Class = {
-  title: '.main-title',
+  title: '.brand',
   subTitle: '.subtitle',
   navItem: '.nav-item',
   post: '.post',
   tagYear: '.tag-year',
   tagNode: '.tag-archive-node',
   tagPostNode: '.tag-post-node',
-  cloudTags: '.cloud-tag',
-  logoLineBefore: '.logo-line-before i',
-  logoLineAfter: '.logo-line-after i'
-}
-
-let logoLineMotion = function(MotionExector) {
-  let before = document.querySelector(Element_Class.logoLineBefore);
-  let after = document.querySelector(Element_Class.logoLineAfter);
-  if (before && after) {
-    let sequence = [];
-    sequence.push({
-      e: before,
-      p: {
-        translateX: '100%'
-      },
-      o: {
-        duration: 200
-      }
-    })
-    sequence.push({
-      e: after,
-      p: {
-        translateX: '-100%'
-      },
-      o: {
-        duration: 200,
-        complete: function() {
-          MotionExector.next();
-        }
-      }
-    })
-    window.Velocity.RunSequence(sequence);
-  } else{
-    MotionExector.next();
-  }
+  cloudTags: '.cloud-tag'
 }
 
 let titleMotion = function(MotionExector) {
-  let title = document.querySelector(Element_Class.title) || document.querySelector('.brand');
+  let title = document.querySelector(Element_Class.title);
   let subTitle = document.querySelector(Element_Class.subTitle);
 
   let sequence = [];
-  if (subTitle) {
-    title && sequence.push({
-      e: title,
-      p: {
-        opacity: 1,
-        top: 0
-      },
-      o: {
-        duration: 200
+  sequence.push({
+    e: title,
+    p: {
+      opacity: 1,
+      top: 0
+    },
+    o: {
+      duration: 200
+    }
+  })
+  sequence.push({
+    e: subTitle,
+    p: {
+      opacity: 1,
+      top: 0
+    },
+    o: {
+      duration: 200,
+      complete: function() {
+        MotionExector.next();
       }
-    })
-    sequence.push({
-      e: subTitle,
-      p: {
-        opacity: 1,
-        top: 0
-      },
-      o: {
-        duration: 200,
-        complete: function() {
-          MotionExector.next();
-        }
-      }
-    })
-  } else {
-    title && sequence.push({
-      e: title,
-      p: {
-        opacity: 1,
-        top: 0
-      },
-      o: {
-        duration: 200,
-        complete: function() {
-          MotionExector.next();
-        }
-      }
-    })
-  }
+    }
+  })
   window.Velocity.RunSequence(sequence);
 }
 
 let menuMotion = function(MotionExector) {
   let menus = document.querySelectorAll(Element_Class.navItem);
 
-  menus && window.Velocity(menus, 'transition.slideDownIn', {
+  window.Velocity(menus, 'transition.slideDownIn', {
     display: null,
     duration: 200,
     complete: function () {
@@ -129,27 +74,16 @@ let menuMotion = function(MotionExector) {
 
 let postListMotion = function(MotionExector) {
   let posts = document.querySelectorAll(Element_Class.post);
-  let geminiSiteMeta = document.querySelector('.pisces .sidebar') 
-  || document.querySelector('.gemini .sidebar');
 
-  if (geminiSiteMeta) {
-    window.Velocity(posts, 'transition.slideDownIn', { })
-  } else {
-    window.Velocity(posts, 'transition.slideDownIn', { 
+  if (posts.length > 0) {
+    window.Velocity(posts ,'transition.slideDownIn', {
+      stagger: 100,
+      drag: true,
       complete: function() {
         MotionExector.next();
       }
-    })
-  }
-  geminiSiteMeta && window.Velocity(geminiSiteMeta,'transition.slideUpIn',{
-    stagger: 100, 
-    drag: true,
-    complete: function() {
-      geminiSiteMeta.style.transform = '';
-      MotionExector.next();
-    }
-  });
-  if (posts.length <=0 && !geminiSiteMeta) {
+    });
+  } else {
     MotionExector.next();
   }
 }
@@ -170,21 +104,12 @@ let tagPostMotion = function(MotionExector) {
   }
 }
 
-let rightMenuMotion = function() {
-  let museMenuBox = document.querySelector('#drawer_box'),
-   postBody = document.querySelector('#post_body')
-  if (museMenuBox && postBody && document.body.clientWidth > 765) {
-    museMenuBox.click();
-  }
-}
-
-MotionExector.add(logoLineMotion)
-.add(titleMotion)
+MotionExector.add(titleMotion)
 .add(menuMotion)
 .add(postListMotion)
 .add(tagPostMotion)
-.add(rightMenuMotion)
 .start();
+
 
 window.addEventListener('load', function() {
   // 归档页入场动画
@@ -217,3 +142,5 @@ window.addEventListener('load', function() {
     window.Velocity.RunSequence(sequence);
   }
 })
+
+
