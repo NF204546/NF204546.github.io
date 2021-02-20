@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nf204546.github.io</id>
     <title>NF204546&apos;s Blog</title>
-    <updated>2021-02-20T02:49:17.062Z</updated>
+    <updated>2021-02-20T02:50:12.784Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nf204546.github.io"/>
     <link rel="self" href="https://nf204546.github.io/atom.xml"/>
@@ -11,20 +11,11 @@
     <icon>https://nf204546.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, NF204546&apos;s Blog</rights>
     <entry>
-        <title type="html"><![CDATA[心安处即吾乡]]></title>
-        <id>https://nf204546.github.io/post/xin-an-chu-ji-wu-xiang/</id>
-        <link href="https://nf204546.github.io/post/xin-an-chu-ji-wu-xiang/">
-        </link>
-        <updated>2021-02-18T06:23:26.000Z</updated>
-        <content type="html"><![CDATA[<p>2021年起在此言述笔记，没有美感字词、图片打叉、文件加密、Flash。</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[关于]]></title>
         <id>https://nf204546.github.io/post/about/</id>
         <link href="https://nf204546.github.io/post/about/">
         </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
+        <updated>2021-02-20T02:49:56.000Z</updated>
         <content type="html"><![CDATA[<blockquote>
 <p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
 </blockquote>
@@ -32,6 +23,15 @@
 <h2 id="博主是谁">👨‍💻 博主是谁</h2>
 <h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
 <h2 id="联系我呀">📬 联系我呀</h2>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[心安处即吾乡]]></title>
+        <id>https://nf204546.github.io/post/xin-an-chu-ji-wu-xiang/</id>
+        <link href="https://nf204546.github.io/post/xin-an-chu-ji-wu-xiang/">
+        </link>
+        <updated>2021-02-18T06:23:26.000Z</updated>
+        <content type="html"><![CDATA[<p>2021年起在此言述笔记，没有美感字词、图片打叉、文件加密、Flash。</p>
 ]]></content>
     </entry>
 </feed>
