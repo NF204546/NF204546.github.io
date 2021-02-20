@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://nf204546.github.io</id>
-    <title>NF204546</title>
-    <updated>2021-02-20T06:57:17.867Z</updated>
+    <title>NF204546&apos;s Blog</title>
+    <updated>2021-02-20T07:28:24.877Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://nf204546.github.io"/>
     <link rel="self" href="https://nf204546.github.io/atom.xml"/>
     <subtitle>微言嘁嘁 </subtitle>
     <logo>https://nf204546.github.io/images/avatar.png</logo>
     <icon>https://nf204546.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, NF204546</rights>
+    <rights>All rights reserved 2021, NF204546&apos;s Blog</rights>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
         <id>https://nf204546.github.io/post/about/</id>
