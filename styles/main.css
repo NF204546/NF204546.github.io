@@ -2162,19 +2162,19 @@ body {
       background-color: #fffffffe;
     }
     .site-meta {
-      background: #000 !important;
+      background: #364fc7 !important;
     }
     .head-top-line {
-      background: #000;
+      background: #364fc7;
     }
     .brand {
-      background: #000000fe;
+      background: #ced4dafe;
     }
     .main-title, .brand {
-      color: #FFF !important;
+      color: #f8f9fa !important;
     }
     .mist .site-title i {
-      background: #FFFFFFfe;
+      background: #f8f9fafe;
     }.box-scale > #landlord {
       transform: scale(0.8);
     }.box-shadow-wrapper {
